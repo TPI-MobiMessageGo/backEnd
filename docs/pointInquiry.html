@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+  <link rel="apple-touch-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="bookmark" type="image/x-icon" href="images/favicon.ico" />
+  <title>境外支付平台管理後台</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
+  <script src="js/validator.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      $('.head').load('Header.html');
+      $('.footer').load('footer.html');
+
+      //畫面切換
+      $(".listSwitch").hide();
+      $('.searchBasicField').on('click', function () {
+        $(".listSwitch").show();
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header class="head">
+    </header>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">會員資料管理</a>
+      </li>
+      <li class="active">會員同意境外支付使用者同意條款查詢</li>
+    </ol>
+    <div class="content">
+
+      <div class="searchPosition">
+        <div class="searchShape">
+          <div class="searchFieldPosition">
+            <div class="searchBasicField">
+              查詢
+            </div>
+            <div class="searchQueryField">
+              <div>
+                <span class="s">*</span>
+                身分證字號：
+                <div class="formStyle" style="width:220px;">
+                  <input type="text" class="form-control" aria-label="id">
+                </div>
+              </div>
+            </div>
+            <div class="searchBasicField">
+              <button class="btn btn-danger" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row listSwitch" style="display: none;">
+        <table class="table table-striped table-02 tableTitle">
+          <thead>
+            <tr>
+              <th>身分證字號</th>
+              <th>IP</th>
+              <th>境外機構</th>
+              <th>同意條款版本</th>
+              <th>條款同意日期時間</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A1234*****</td>
+              <td>10.14.214.34</td>
+              <td>JCB 日本</td>
+              <td>
+                <a class="btn-link" data-toggle="modal" data-target="#pointlnquiry">Ｖ0.5</a>
+              </td>
+              <td>2019/02/03 19:23:20</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- <div class="pagination listSwitch">
+        <div class="text-center">
+          <nav>
+            <ul class="pagination pagination-circle ts-pagination">
+              <li class="disabled">
+                <a href="#" aria-label="Previous">
+                  <span aria-hidden="true">«</span>
+                </a>
+              </li>
+              <li class="active">
+                <a href="#">1
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">2
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#">3
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#" aria-label="Next">
+                  <span aria-hidden="true">»</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+  <footer id="copyright" class="footer">
+  </footer>
+  </div>
+
+  <div class="modal fade" id="pointlnquiry" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-red">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">條款內容</h4>
+        </div>
+        <div class="modal-body" style="text-align: center;text-align: left;">
+          <!-- Sample textarea start-->
+          <div class="ga-tab-content-container tab-content">
+            <div role="tabpanel" class="tab-pane ga-tab-contentactive active show" id="ts-comp-7-6-tab1">
+              <div class="tabdemo-type-1-tab1-cont">
+                <div class="ts-comp-30">
+                  <div class="editor-subtitle">
+                    <p></p>
+                    <p>台新銀行Apple Pay線上服務協議(信用卡)</p>
+                    <div style="left: -3000px; width: 1000px; overflow: hidden; position: fixed;"
+                      contenteditable="false">
+                      <div contenteditable="true">
+                        <!-- x-tinymce/html -->台新銀行Apple Pay線上服務協議(信用卡)</div>
+                    </div>
+                    <p></p>
+                  </div>
+                  <div class="editor-txt editor-ul-li editor-ol-li editor-table htmlcontent">
+                    <p><strong><span style="color: #ff0000;">§</span>台新銀行</strong><strong>Apple
+                        Pay</strong><strong>線上服務協議</strong><strong>(</strong><strong>信用卡</strong><strong>)</strong></p>
+                    <p>公告日期：2018年4月，版次：2.0版</p>
+                    <p>台新銀行Apple Pay線上服務協議（以下簡稱本協議）由台新銀行（以下簡稱本行）與本行持卡人（以下簡稱您）就Apple
+                      Pay使用等相關事項所訂立的有效約定，經您使用手機或行動裝置點選確認同意後，即表示您已經過合理期間審閱，且同意接受本協議的全部約定條款，確認承擔由此產生的一切責任。本行保有驗證及核准與否之權利。<br><span
+                        style="color: #ff0000;">為確保使用安全，請您務必於您的手機或行動裝置安裝防毒軟體。</span><br><span
+                        style="color: #ff0000;">並且請勿使用經越獄（Jail Break,簡稱JB）、Root、刷機等的手機或行動裝置，避免造成無法使用Apple
+                        Pay。</span><br><span style="color: #ff0000;">在您接受本協議之前，請您務必仔細閱讀本協議的全部內容。</span></p>
+                    <p>Apple Pay是一種在符合特定系統規格及機型之Apple設備由Apple獨家提供的付款服務。本行不擁有運營或控制Apple和不負責Apple或任何第三方從事Apple
+                      Pay提供給您的任何信息或其他服務。</p>
+                    <p>您利用Apple Pay中所綁定之本行信用卡付款前，須於Apple Pay
+                      Wallet申請綁定本行有效實體信用卡（得綁定之信用卡依本行公告為準），綁定時應輸入本行信用卡卡號、信用卡有效年月、卡片背面末三碼等資訊進行驗證程序。若您所輸入的資料經本行驗證無誤，且核准進行代碼化，本行將發送驗證簡訊密碼至您於本行登記的手機號碼上，待您輸入驗證簡訊密碼後，經確認無誤，即下載安裝本行代碼化信用卡至您申請的行動裝置，當下載安裝完成後，即可啟用。Apple
+                      Pay上會以顯示該實體信用卡所屬系列主要的卡面為主。Apple Pay以代碼化信用卡付款係實體信用卡之衍生服務，不另收取年費，僅提供信用卡功能，不具有電子票證功能（包含悠遊卡、一卡通、愛金卡等）。
+                    </p>
+                    <p>Apple Pay之卡號代碼不應以任何形式公開，Apple
+                      Pay僅限使用於代替原實體信用卡之感應交易，且不能使用於以下之服務：接觸式刷卡交易、接觸式刷卡相關服務（包含特約商店贈品兌換、機場停車、市區停車等附加功能）、申請附卡、預借現金、代扣公用事業費、離線交易、特約商店刷卡分期交易、特約商店刷卡紅利折抵，以及原實體信用卡對應之聯名卡權益優惠、原實體信用卡對應之國際組織提供之權益優惠等。
+                    </p>
+                    <p>Apple Pay僅限您申請並下載本行信用卡之手機或行動裝置使用，一旦完成Apple Pay綁定信用卡啟用作業，您在手機或行動裝置或相關使用介面使用生物特徵辨識（如Touch
+                      ID指紋驗證、Face ID臉部辨識…等）或輸入交易密碼，即視為您確認支付金額及支付指令，並由信用卡國際組織及本行進行後續處理，您同意並授權本行依據Apple
+                      Pay交易指令從您綁定的信用卡帳戶支付款項，Apple Pay享受的權益與您綁定的信用卡權益相同。</p>
+                    <p>本行得將您以Apple Pay進行交易之交易資訊，以直接或間接透過信用卡國際組織方式，提供予Apple揭露於Apple Pay
+                      Wallet中，以利您得查詢歷史交易記錄，惟本行所提供之資訊不含實體信用卡號資料。</p>
+                    <p>Apple Pay最多可申請綁定的卡片張數依Apple官網之設定Apple
+                      Pay頁面說明各裝置可加入最多之卡片張數為主。如約定之信用卡因掛失、偽冒、停用等原因失效時，該代碼化信用卡即同步無法進行消費支付或服務終止。</p>
+                    <p>有關Apple Pay之使用或支付限制（如海外消費金額限制），請您於使用前詳閱Apple Pay官網說明。</p>
+                    <p>您於手機或行動裝置使用Apple
+                      Pay進行消費款項支付時，即使用代碼化信用卡進行支付，消費額度是以該綁定的信用卡核定之信用額度內使用為主，惟本行保有交易授權准駁與否之權利。<br>如果您就消費帳款有疑義時，可登錄本行網路銀行、行動銀行等查詢相關消費明細，或可洽本行查詢相關消費明細。
+                    </p>
+                    <p>您應妥善保管信用卡（卡號、有效月年、卡片背面末三碼）、代碼化信用卡、證件資料、手機或行動裝置、手機號碼、驗證簡訊密碼、帳單地址等，並確認您所使用之生物特徵辨識（如Touch
+                      ID指紋驗證、Face
+                      ID臉部辨識…等）或輸入交易密碼，是由您本人所設定的資料。如您遺失信用卡、綁定的手機或行動裝置，或洩露應妥善保管的相關資料，您應立即通知本行進行掛失停用等事項之處理。如果您沒有通知本行，您可能須承擔全部或部分使用Apple
+                      Pay或您的信用卡相關的損失。</p>
+                    <p>Apple Pay限本人使用不得轉讓、質借或由他人占有；否則因此所生之糾紛或損失，概由您自行負責。<br>您不得有複製或改製Apple
+                      Pay系統、軟體等之行為；一經發現，本行得通知APPLE，由其得報請有關機關追究其偽造、變造或行使之刑責，並得請求賠償本行因而招致之損失。<br>您如欲停止使用Apple
+                      Pay的代碼化信用卡支付款項功能，應向本行提出停用本服務的代碼化信用卡，始生註銷代碼化信用卡效力。</p>
+                    <p>本行為保障您的交易安全及維護雙方權益，若您綁定的信用卡或Apple
+                      Pay的代碼化信用卡有遭偽冒使用或變造之虞、或接獲信用卡國際組織、其他發卡或收單機構風險通報時，得於通知您後，進行暫時停卡、永久停卡或主動換卡等控管作業，如您無意願配合處理者，得通知本行終止本協議。前開情形，如無法即時通知您，您同意本行得逕依前開約定之管控作業處理。
+                    </p>
+                    <p>本協議如有未盡事宜，依本行「信用卡會員約定條款｣及「持卡人購買商品或服務應注意事項｣辦理（詳本行官網<a
+                        href="https://www.taishinbank.com.tw/TSB/personal/" target="_blank"
+                        rel="noopener noreferrer">https://www.taishinbank.com.tw/TSB/</a><a
+                        href="https://www.taishinbank.com.tw/"></a>）；若無相關規定或非所適用者，依誠信原則處理之。</p>
+                    <p>本協議之解釋及適用、以及使用者因使用Apple Pay而與Apple
+                      Pay綁定本行信用卡間所生之權利義務關係，應依中華民國法令解釋適用之，並以臺灣士林地方法院、臺灣臺中地方法院、臺灣高雄地方法院擇一為第一審法院。</p>
+                    <p>&nbsp;</p>
+                    <div style="left: -3000px; width: 1000px; overflow: hidden; position: fixed;"
+                      contenteditable="false">
+                      <div contenteditable="true">
+                        <!-- x-tinymce/html --><span style="font-size: medium;"><strong>台新銀行Apple
+                            Pay線上服務協議(信用卡)</strong></span></div>
+                    </div>
+                    <div style="left: -3000px; width: 1000px; overflow: hidden; position: fixed;"
+                      contenteditable="false">
+                      <div contenteditable="true">
+                        <!-- x-tinymce/html --><strong><span style="color: #ff0000;">§</span></strong></div>
+                    </div>
+                  </div>
+                  <div class="editor-subtitle">
+                    <p></p>
+                    <p>台新銀行Apple Pay線上服務協議（行動金融卡）</p>
+                    <div style="left: -3000px; width: 1000px; overflow: hidden; position: fixed;"
+                      contenteditable="false">
+                      <div contenteditable="true">
+                        <!-- x-tinymce/html -->台新銀行Apple Pay線上服務協議（行動金融卡）</div>
+                    </div>
+                    <p></p>
+                  </div>
+                  <div class="editor-txt editor-ul-li editor-ol-li editor-table htmlcontent">
+                    <p><strong><span style="color: #ff0000;">§</span>台新銀行Apple Pay線上服務協議（行動金融卡）</strong></p>
+                    <p>公告日期：2018年4月，版次：1.0版</p>
+                    <p>台新銀行Apple Pay線上服務協議（以下簡稱本協議）由台新銀行（以下簡稱本行）與本行持卡人（以下簡稱您）就Apple
+                      Pay使用等相關事項所訂立的有效約定，經您使用手機或行動裝置點選確認同意後，即表示您已經過合理期間審閱，且同意接受本協議的全部約定條款，確認承擔由此產生的一切責任。本行保有驗證及核准與否之權利。<br><span
+                        style="color: #ff0000;">為確保使用安全，請您務必於您的手機或行動裝置安裝防護軟體。</span><br><span
+                        style="color: #ff0000;">並且請勿使用經越獄（Jail Break,簡稱JB）、Root、刷機等的手機或行動裝置，避免造成無法使用Apple
+                        Pay。</span><br><span style="color: #ff0000;">在您接受本協議之前，請您務必仔細閱讀本協議的全部內容。</span></p>
+                    <p>Apple Pay是一種在符合特定系統規格及機型之Apple設備由Apple獨家提供的付款服務。本行不擁有運營或控制Apple和不負責Apple或任何第三方從事Apple
+                      Pay提供給您的任何信息或其他服務。</p>
+                    <p>您利用Apple Pay中所綁定之本行簽帳金融卡(如VISA金融卡、勞動保障卡、悠遊聯名卡等)付款前，須於Apple Pay
+                      Wallet申請綁定本行有效實體簽帳金融卡（得綁定之卡片為第一類、第二類數位存款帳戶或非數位存款帳戶者，並依本行公告為準），綁定時需輸入本行簽帳金融卡卡號、有效年月、卡片背面末三碼等資訊進行驗證程序。若您所輸入的資料經本行驗證無誤，且核准進行代碼化，本行將發送驗證簡訊密碼至您於本行登記的手機號碼上，待您輸入驗證簡訊密碼後，經確認無誤，即下載安裝本行代碼化行動金融卡至您申請的手機或行動裝置，當下載安裝完成後，即可啟用。Apple
+                      Pay上會以顯示該實體簽帳金融卡所屬系列主要的卡面為主。Apple
+                      Pay以代碼化行動金融卡付款係實體簽帳金融卡之衍生服務，不另收取年費，僅提供行動金融卡消費功能，不具有電子票證功能（包含悠遊卡、一卡通、愛金卡等），且不提供提款及轉帳功能。</p>
+                    <p>Apple Pay之卡號代碼不應以任何形式公開，Apple
+                      Pay僅限使用於代替原實體簽帳金融卡之感應交易，且不能使用於以下之交易及服務：接觸式刷卡交易、接觸式刷卡相關服務（包含特約商店贈品兌換、機場停車、市區停車等附加功能）、預借現金、代扣公用事業費、離線交易、提款、轉帳、具遞延性之商品或服務或信用卡國際組織定義之高風險商品服務之特約商店，以及原實體簽帳金融卡對應之聯名卡權益優惠、原實體簽帳金融卡對應之國際組織提供之權益優惠等。
+                    </p>
+                    <p>Apple Pay僅限您申請並下載本行簽帳金融卡之手機或行動裝置使用，一旦完成Apple Pay綁定簽帳金融卡啟用作業，您在手機或行動裝置或相關使用介面使用生物特徵辨識（如Touch
+                      ID指紋驗證、Face ID臉部辨識…等）或輸入交易密碼，即視為您確認支付金額及支付指令，並由信用卡國際組織及本行進行後續處理，您同意並授權本行依據Apple
+                      Pay交易指令從您綁定的行動金融卡支付款項，Apple Pay享受的權益與您綁定的簽帳金融卡權益相同。</p>
+                    <p>本行得將您以Apple Pay進行交易之交易資訊，以直接或間接透過信用卡國際組織方式，提供予Apple揭露於Apple Pay
+                      Wallet中，以利您得查詢歷史交易記錄，惟本行所提供之資訊不含實體簽帳金融卡卡號資料。</p>
+                    <p>Apple Pay最多可申請綁定的卡片張數依Apple官網之設定Apple
+                      Pay頁面說明各裝置可加入最多之卡片張數為主。如約定之簽帳金融卡因掛失、偽冒、停用等原因失效時，該代碼化行動金融卡即同步無法進行消費支付或服務終止。</p>
+                    <p>有關Apple Pay之使用或支付限制（如海外消費金額限制），請您於使用前詳閱Apple Pay官網說明。</p>
+                    <p>您於手機或行動裝置使用Apple
+                      Pay進行消費款項支付時，即使用代碼化行動金融卡進行支付，消費額度是以不超過該綁定的簽帳金融卡所連結存款帳戶之可用存款餘額為主，代碼化行動金融卡與實體簽帳金融卡共用同一額度，且亦訂有每日刷卡消費額度上限，惟本行保有交易授權准駁與否之權利。<br>如果您就消費帳款有疑義時，可登入本行網路銀行、行動銀行等查詢相關消費明細，或可洽本行查詢相關消費明細。
+                    </p>
+                    <p>您應妥善保管簽帳金融卡（卡號、有效月年、卡片背面末三碼）、代碼化行動金融卡、證件資料、手機或行動裝置、手機號碼、驗證簡訊密碼、帳單地址等，並確認您所使用之生物特徵辨識（如Touch
+                      ID指紋驗證、Face
+                      ID臉部辨識…等）或輸入交易密碼，是由您本人所設定的資料。如您遺失簽帳金融卡、綁定的手機或行動裝置，或洩露應妥善保管的相關資料，您應立即通知本行進行掛失停用等事項之處理。如果您沒有通知本行，您可能須承擔全部或部分使用Apple
+                      Pay或您的簽帳金融卡、行動金融卡相關的損失。</p>
+                    <p>Apple Pay限本人使用不得轉讓、質借或由他人占有；否則因此所生之糾紛或損失，概由您自行負責。<br>您不得有複製或改製Apple
+                      Pay系統、軟體等之行為；一經發現，本行得通知APPLE，由其報請有關機關追究其偽造、變造或行使之民刑事責任；如有造成本行損失，並應賠償本行因此之損害。<br>您如欲停止使用Apple
+                      Pay的代碼化行動金融卡支付款項功能，應向本行提出停用本服務的代碼化行動金融卡或於手機或行動裝置上刪除代碼化行動金融卡，始生註銷代碼化行動金融卡效力。</p>
+                    <p>本行為保障您的交易安全及維護雙方權益，若您綁定的簽帳金融卡或Apple
+                      Pay的代碼化行動金融卡有遭偽冒使用或變造之虞、或接獲信用卡國際組織、其他發卡或收單機構風險通報時，得於通知您後，進行暫時停卡、永久停卡或主動換卡等控管作業，如您無意願配合處理者，得通知本行終止本協議。前開情形，如無法即時通知您，您同意本行得逕依前開約定之管控作業處理。
+                    </p>
+                    <p>本協議如有未盡事宜，依本行簽帳金融卡相關約定條款辦理（詳本行官網<a href="https://www.taishinbank.com.tw/TSB/personal/"
+                        target="_blank"
+                        rel="noopener noreferrer">https://www.taishinbank.com.tw/TSB/</a>）；若無相關約定或非所適用者，依誠信原則處理之。</p>
+                    <p>本協議之解釋及適用、以及使用者因使用Apple Pay而與Apple
+                      Pay綁定本行簽帳金融卡間所生之權利義務關係，應依中華民國法令解釋適用之，並以臺灣士林地方法院、臺灣臺中地方法院、臺灣高雄地方法院擇一為第一審法院。</p>
+                    <div style="left: -3000px; width: 1000px; overflow: hidden; position: fixed;"
+                      contenteditable="false">
+                      <div contenteditable="true">
+                        <!-- x-tinymce/html --><span style="font-size: medium;"><strong>台新銀行Apple
+                            Pay線上服務協議（行動金融卡）</strong></span></div>
+                    </div>
+                  </div>
+                  <ul class="ul-items">
+                    <li class="ul-li-items">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Sample textarea end-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

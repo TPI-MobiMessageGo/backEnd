@@ -1,0 +1,443 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+  <link rel="apple-touch-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="bookmark" type="image/x-icon" href="images/favicon.ico" />
+  <title>境外支付平台管理後台</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+  <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/validator.min.js" type="text/javascript"></script>
+  <script src="js/datepicker-zh-TW.js" type="text/javascript"></script>
+  <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $('.head').load('Header.html');
+      $('.footer').load('footer.html');
+
+      //畫面切換
+      $('.searchBasicField').on('click', function() {
+          $(".listSwitch").show();
+        })
+        //icon 點擊後顯示 datepicker
+      $('.addicon').on('click', function() {
+        $('#add').datetimepicker('toggle')
+      })
+      $('.editicon').on('click', function() {
+        $('#edit').datetimepicker('toggle')
+      })
+      $('.updateicon').on('click', function() {
+        $('#update').datetimepicker('toggle')
+      })
+    });
+    $(document).ready(function() {
+      $.datetimepicker.setLocale('zh-TW')
+      $('#update').datetimepicker({
+        format: "Y/m/d",
+        timepicker: false,
+        dayOfWeekStart: 1,
+        todayButton: false,
+        minDate: 1,
+        maxDate: 0
+      });
+      $('#edit').datetimepicker({
+        format: "Y/m/d",
+        timepicker: false,
+        dayOfWeekStart: 1,
+        todayButton: false,
+        minDate: 1,
+        maxDate: 0
+      });
+      $('#add').datetimepicker({
+        format: "Y/m/d",
+        timepicker: false,
+        dayOfWeekStart: 1,
+        todayButton: false,
+        minDate: 1,
+        maxDate: 0
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header class="head">
+    </header>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">境外機構商店管理</a>
+      </li>
+      <li class="active">境外機構商店查詢</li>
+    </ol>
+    <div class="content">
+      <div class="searchPosition">
+        <div class="searchShape">
+          <div class="searchFieldPosition">
+            <div class="searchBasicField">
+              查詢
+            </div>
+            <div class="searchQueryField">
+              <div>
+                <span class="s">*</span> 境外機構：
+                <div class="formStyle" style="width:200px;">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>GLN</option>
+                  </select>
+                </div>
+                <span class="s">*</span> 店家國別：
+                <div class="formStyle" style="width:200px;">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>日本</option>
+                  </select>
+                </div>
+                境外機構商店編號：
+                <div class="formStyle" style="width: 220px;">
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+              <div>
+                上傳日期：
+                <div class="formStyle" style="width: 200px;">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" name="updateTime" id="update" />
+                    <span class="input-group-addon updateicon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+                新增日期：
+                <div class="formStyle" style="width: 200px;">
+                  <div class="input-group date ">
+                    <input type="text" class="form-control" name="addTime" id="add" />
+                    <span class="input-group-addon addicon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+                修改日期：
+                <div class="formStyle" style="width: 200px;">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" name="editTime" id="edit" />
+                    <span class="input-group-addon editicon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+                <span class="s">*</span> 狀態：
+                <div class="formStyle" style="width:200px;">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>啟用</option>
+                    <option>停用</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="searchBasicField">
+              <button class="btn btn-danger" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row listSwitch" style="display: none;">
+        <table class="table table-striped table-02 tableTitle">
+          <thead>
+            <tr>
+              <th style="width:5%">境外機構</th>
+              <th style="width:5%">店家國別</th>
+              <th style="width:10%">境外機構店家編號</th>
+              <th style="width:10%">境外機構店家名稱</th>
+              <th style="width:35%">地址</th>
+              <th style="width:10%;">上傳日期</th>
+              <th style="width:10%;">新增日期</th>
+              <th style="width:10%;">修改日期</th>
+              <th style="width:5%;">狀態</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0101567890123</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0102567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0103567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0104567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0105567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0106567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0107567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0108567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0109567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0110567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0111567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0112567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN011367890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0114567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0115567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0116567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0117567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0118567890124</td>
+            <td>日本橋三越 本館</td>
+            <td>日本橋三越</td>
+            <td></td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0119567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>GLN</td>
+            <td>日本</td>
+            <td>GLN0120567890125</td>
+            <td>日本橋三越 本館</td>
+            <td>1 Chome-4-1 Nihonbashimuromachi, Chuo City, Tokyo 103-8001日本</td>
+            <td></td>
+            <td>2020/02/18</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
+          </tr>
+        </table>
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <footer id="copyright" class="footer">
+    </footer>
+  </div>
+
+  <div class="modal" id="reportModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-red">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">警告</h4>
+        </div>
+        <div class="modal-body" id="reporWarning" style="text-align: center">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">確認</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

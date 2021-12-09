@@ -1,0 +1,21 @@
+{
+  "name": "taishin-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ws",
+    "startmock": "ws --mocks example-mocks.js"
+  },
+  "dependencies": {
+    "local-web-server": "^2.3.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://ElonChiu@bitbucket.org/ElonChiu/tsb-bakendmockup.git"
+  },
+  "homepage": "https://bitbucket.org/ElonChiu/tsb-bakendmockup#readme"
+}

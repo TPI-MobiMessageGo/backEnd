@@ -1,0 +1,488 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+  <link rel="apple-touch-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="bookmark" type="image/x-icon" href="images/favicon.ico" />
+  <title>點數轉換管理後台系統</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/bootstrap-multiselect.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      $('.head').load('Header.html');
+      $('.footer').load('footer.html');
+    })
+
+    // 全選api checkbox
+    function allCheck() {
+      var el = document.getElementsByName('apiCheckbox');
+      var len = el.length;
+      for (var i = 0; i < len; i++) {
+        $("input[name='apiCheckbox']").prop("checked", true);
+      }
+    }
+    //取消全選api checkbox
+    function falseCheck() {
+      var el = document.getElementsByName('apiCheckbox');
+      var len = el.length;
+      for (var i = 0; i < len; i++) {
+        $("input[name='apiCheckbox']").prop("checked", false);
+      }
+    }
+    // 顯示選擇checkbox
+    function showCheck() {
+      if ($("#ml-1").children() !== '') {
+        $("#ml-1").children().remove();
+      }
+      checklist = $("input:checkbox[name='apiCheckbox']:checked").map(function () {
+        return $(this).val()
+      }).get().join('<br>');
+      $node = '<span class="apiPushName">' + checklist + '</span>'
+      $("#ml-1").append($node);
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header class="head">
+    </header>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">角色權限管理</a>
+      </li>
+      <li class="active">權限管理</li>
+    </ol>
+    <div class="content">
+      <form role="form" data-toggle="validator">
+        <div role="tabpanel" class="tab-pane active" id="coupon02">
+          <div class="text-right btn-ft">
+            <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal"
+              data-target="#confirmModal">修改</button>
+            <a href="GroupFunctionDetail.html" class="btn btn-danger btn-sm" type="button">取消</a>
+          </div>
+          <table class="table table-striped table-01 tableEdit">
+            <tr>
+              <th>
+                <span class="s">*</span>群組</th>
+              <td>
+                <div class="form-group w-text">
+                  <select class="form-control" required>
+                    <option>請選擇</option>
+                    <option value="100">經辦</option>
+                    <option value="200">審核主管</option>
+                    <option value="300">客服</option>
+                    <option value="400">作服</option>
+                    <option value="500">IT</option>
+                  </select>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <span class="s">*</span>功能</th>
+              <td>
+                <div id="ml-1"></div>
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                  data-target="#myModa2">請選擇</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    </div>
+    <footer id="copyright" class="footer">
+    </footer>
+  </div>
+
+  <div class="modal fade bs-example-modal" id="confirmModal" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-red">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="confirmBtnClose">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="messageTextTitle">確認視窗</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="message-text" id="messageTextLabel" class="control-label">Message:</label>
+              <textarea class="form-control" id="messageText"
+                onKeypress="if(this.value.length >= 200){return false;}"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger confirmOk" id="confirmBtnSubmit">確定</button>
+          <button type="button" class="btn btn-danger confirmCancel" id="confirmBtnCancel">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-red">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">訪問權限</h4>
+        </div>
+        <div class="modal-body" style="text-align: center;text-align: left;">
+          <table class="table tableHover table-02 checkAPI">
+            <thead>
+              <tr>
+                <th>功能名稱</th>
+                <th>功能選取</th>
+              </tr>
+            </thead>
+            <tr class="info">
+              <td>平台管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>境外機構查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構新增</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構新增" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構修改</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構修改" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構刪除</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構刪除" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構審核</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構審核" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Channel查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="Channel查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Channel新增</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="Channel新增" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Channel修改</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="Channel修改" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>境外機構商店管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>境外機構商店查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構商店查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構商店上傳</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構商店上傳" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構商店新增</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構商店新增" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構商店修改</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構商店修改" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構商店刪除</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構商店刪除" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外機構商店審核</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構商店審核" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>會員資料管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>境外機構綁定查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外機構綁定查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>會員同意境外支付使用者同意條款查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="會員同意境外支付使用者同意條款查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>條款管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>境外支付使用者同意條款查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外支付使用者同意條款查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外支付使用者同意條款新增</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外支付使用者同意條款新增" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>境外支付使用者同意條款修改</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="境外支付使用者同意條款修改" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>交易管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>交易資料查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="交易資料查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>交易請款紀錄查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="交易請款紀錄查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>報表管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>分析性報表-交易資料分佈統計</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="分析性報表-交易資料分佈統計" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>分析性報表-交易資料統計</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="分析性報表-交易資料統計" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>帳務類報表-手續費查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="帳務類報表-手續費查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>角色權限管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>權限設定</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="權限設定" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="info">
+              <td>系統紀錄查詢管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>紀錄檔查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="紀錄檔查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>系統操作查詢</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="系統操作查詢" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr class="info">
+              <td>系統管理</td>
+              <td />
+            </tr>
+            <tr>
+              <td>參數設定</td>
+              <td>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="參數設定" name="apiCheckbox">
+                  </label>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" onclick="allCheck()">全部選取</button>
+          <button type="button" class="btn btn-danger" onclick="falseCheck()">全部取消</button>
+          <button type="button" class="btn btn-danger" id="ms-1" data-dismiss="modal" onclick="showCheck()">確認</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
