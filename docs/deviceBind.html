@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=yes">
+  <link rel="apple-touch-icon" href="images/favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="https://www.cathaybk.com.kh/bankprofile/media/ucbcLogo.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+  <link rel="bookmark" type="image/x-icon" href="images/favicon.ico" />
+  <title>CUBC APP Management</title>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <link href="css/jquery-ui.css" rel="stylesheet">
+  <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+  <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
+  <script src="js/bootstrap.js" type="text/javascript"></script>
+  <script src="js/validator.min.js" type="text/javascript"></script>
+  <script src="js/datepicker-zh-TW.js" type="text/javascript"></script>
+  <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $('.head').load('Header.html');
+      $('.footer').load('footer.html');
+
+      //畫面切換
+      $('.searchBasicField').on('click', function() {
+          $(".listSwitch").show();
+        })
+        //icon 點擊後顯示 datepicker
+      $('.addicon').on('click', function() {
+        $('#add').datetimepicker('toggle')
+      })
+      $('.editicon').on('click', function() {
+        $('#edit').datetimepicker('toggle')
+      })
+      $('.updateicon').on('click', function() {
+        $('#update').datetimepicker('toggle')
+      })
+    });
+    $(document).ready(function() {
+      $.datetimepicker.setLocale('zh-TW')
+      $('#update').datetimepicker({
+        format: "Y/m/d",
+        timepicker: false,
+        dayOfWeekStart: 1,
+        todayButton: false,
+        minDate: 1,
+        maxDate: 0
+      });
+      $('#edit').datetimepicker({
+        format: "Y/m/d",
+        timepicker: false,
+        dayOfWeekStart: 1,
+        todayButton: false,
+        minDate: 1,
+        maxDate: 0
+      });
+      $('#add').datetimepicker({
+        format: "Y/m/d",
+        timepicker: false,
+        dayOfWeekStart: 1,
+        todayButton: false,
+        minDate: 1,
+        maxDate: 0
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrapper">
+    <header class="head">
+    </header>
+    <ol class="breadcrumb">
+      <li>
+        <a href="#">APP管理</a>
+      </li>
+      <li class="active">裝置綁定管理</li>
+    </ol>
+    <div class="content">
+      <div class="searchPosition">
+        <div class="searchShape">
+          <div class="searchFieldPosition">
+            <div class="searchBasicField">
+              查詢
+            </div>
+            <div class="searchQueryField">
+              <div>
+                National ID：
+                <div class="formStyle" style="width:200px;">
+                  <input type="text" class="form-control" aria-label="id">
+                </div>
+                CIF：
+                <div class="formStyle" style="width:200px;">
+                  <input type="text" class="form-control" aria-label="id">
+                </div>
+              </div>
+            </div>
+            <div class="searchBasicField">
+              <button class="btn btn-danger" type="button">
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row listSwitch" style="display: none;">
+        <table class="table table-striped table-02 tableTitle">
+          <thead>
+            <tr>
+              <th style="width:25%">Device ID</th>
+              <th style="width:15%">OS Version</th>
+              <th style="width:10%">APP Version</th>
+              <th style="width:15%">phone Vendor</th>
+              <th style="width:15%">vendor version</th>
+              <th style="width:20%;">update dateTime</th>
+            </tr>
+          </thead>
+          <tr>
+            <td>47908357902384579</td>
+            <td>Android 5.0</td>
+            <td>1.0.2</td>
+            <td>HTC</td>
+            <td>Desire S</td>
+            <td>2020/12/15 12:36:37</td>
+          </tr>
+         
+        </table>
+
+      </div>
+    </div>
+    <footer id="copyright" class="footer">
+    </footer>
+  </div>
+
+  <div class="modal" id="reportModel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-red">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">警告</h4>
+        </div>
+        <div class="modal-body" id="reporWarning" style="text-align: center">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">確認</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

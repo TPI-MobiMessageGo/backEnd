@@ -33,87 +33,59 @@
     </header>
     <ol class="breadcrumb">
       <li>
-        <a href="#">營運管理</a>
+        <a href="#">APP管理</a>
       </li>
-      <li class="active">分行據點設定</li>
+      <li class="active">版本資訊管理</li>
     </ol>
     <div class="content">
 
       <div class="text-right btn-ft">
         <button class="btn btn-danger" data-toggle="modal" data-target="#confirmModal">Submit</button>
+        <a href="VersionHis.html" class="btn btn-danger">back</a>
       </div>
-
 
         <table class="table table-striped table-01 tableEdit">
  <tr>
-            <th>
-              <span class="s">*</span>Branch Name
+            <th> phone type
             </th>
             <td>
-               <input type="text" size='80' class="s-text" value="  Cathay United Bank (Cambodia)-Chaom Chau Branch">
-             
+               iOS
             </td>
           </tr>         
 
 		 <tr>
+      <tr>
+        <th>
+          <span class="s">*</span>version
+        </th>
+        <td>
+           <input type="text" class="s-text" value="1.2">
+         
+        </td>
+      </tr>         
+
+ <tr>
             <th>
-              <span class="s">*</span>City/Province
+              <span class="s">*</span>version status
             </th>
             <td>
               <div class="formStyle">
                 <select class="form-control">
-                  <option>Phnom Penh</option><option>Siem Reap</option><option>Sihanoukville</option><option>Battambang</option><option>Kampong Cham</option><option>Bavet</option>
+                  <option>forcibly</option>
+                  <option>remind</option>
                 </select>
               </div>
             </td>
           </tr>
 		  <tr>
             <th>
-              <span class="s">*</span>Address
+              <span class="s">*</span>update msg
             </th>
             <td>
-              <textarea rows="10" cols="50" class="form-control w-text" >200m from Phnom Penh International Airport, No. 8C & 9C (Eo,E1), Confederation de la Russie Blvd, Sangkat Kakab, Khan Porsenchey, Phnom Penh Tek Thlar, Khan Sen Sok</textarea>
-             
+              <input type="text" size="60" class="s-text" value="UPDATE VERSION 1.2">
+         
             </td>
           </tr>  
-		  <tr>
-            <th>
-              <span class="s">*</span>Contact
-            </th>
-            <td>
-              <textarea rows="10" cols="50" class="form-control w-text" >Tel: (855) 23 - 89 03 99
-Fax: (855) 23 - 89 06 13</textarea>
-             
-            </td>
-          </tr>  
-          <tr>
-            <th>
-              <span class="s">*</span>is ATM
-            </th>
-            <td>
-              <div class="formStyle">
-                <label>
-                  <input type="radio" name="optionsRadios" checked> YES
-                </label>
-                <label>
-                  <input type="radio" name="optionsRadios"> NO
-                </label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <span class="s">*</span>AMT hours
-            </th>
-            <td>
-              <div class="formStyle">
-                <select class="form-control">
-                                   <option>24/7</option>
-                  <option>8/5</option>
-                </select>
-              </div>
-            </td>
-          </tr>
           
         </table>
       </div>

@@ -9,7 +9,7 @@ body {
     color: #3e454f;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 a {
@@ -43,7 +43,7 @@ a {
     left: 50%;
     top: 15%;
     margin-left: -200px;
-    background-color: #ffffff;
+    background-color: #00995d;
     padding: 30px 20px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-repeat: no-repeat;
@@ -55,16 +55,21 @@ a {
 }
 
 .nologo {
-    background-image: url(../images/logo.png);
+	background-image: url(https://ibanking.kh.cathaybk.com/Content/Home/images/logo.svg);
     background-repeat: no-repeat;
-    background-size: auto 50px;
+    /* background-size: auto 25px; */
     font-size: 22px;
-    color: #3e454f;
+    color: #ffff;
     text-indent: 120px;
     font-weight: bold;
     margin: 10px 0 0 15px;
-    height: 70px;
+    height: 55px;
     padding-top: 12px;
+    /* background-color: #00994e; */
+    /*padding-left: 350px;*/
+    text-align: center;
+    /* text-align: center;*/
+	
 }
 
 
@@ -72,6 +77,7 @@ a {
 
 header {
     padding: 0.1px 0 0 0;
+	background-color: #00995d;
 }
 
 header .logo {
@@ -85,7 +91,7 @@ header .logo {
 header .navbar-right {
     margin-right: 0;
     margin-top: -35px;
-    color: #666;
+    color: #f4f8fa;
 }
 
 header .navbar-right li {
@@ -149,7 +155,7 @@ nav.menu div ul li a {
 
 nav.menu ul li ul li a {
     background-color: #f3f3f3;
-    color: #d80c18;
+    color: #0c81ad;
 }
 
 
@@ -201,7 +207,7 @@ nav.menu ul ul ul {
 }
 
 .breadcrumb>.active {
-    color: #d80c18;
+    color: #0c81ad;
 }
 
 .breadcrumb {
@@ -293,6 +299,11 @@ input {
     margin-right: 4px;
 }
 
+.showfile{
+    height: 34px;
+    margin-right: 5px;
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn.active:focus {
@@ -301,22 +312,22 @@ input {
 
 .btn-danger {
     background-color: #ffffff;
-    border-color: #d80c18;
-    color: #d80c18;
+    border-color: #0c81ad;
+    color: #0c81ad;
 }
 
 .btn-danger:hover {
     color: #ffffff;
-    background-color: #d80c18;
-    border-color: #d80c18;
+    background-color: #0c81ad;
+    border-color: #0c81ad;
 }
 
 .btn-danger:active,
 .btn-danger:focus,
 .btn-danger:active:focus {
     color: #ffffff;
-    background-color: #d80c18;
-    border-color: #d80c18;
+    background-color: #0c81ad;
+    border-color: #0c81ad;
 }
 
 .btn-del {
@@ -395,7 +406,7 @@ input {
 }
 
 .w-text {
-    width: 400px;
+    width: 500px;
 }
 
 .w-date {
@@ -487,6 +498,15 @@ input {
     color: #fff;
 }
 
+.modal-bg-blue {
+    background-color: #0c81ad;
+    border-radius: 4px 4px 0 0;
+}
+
+.modal-bg-blue>.modal-title {
+    color: #fff;
+}
+
 .t-center {
     text-align: center;
 }
@@ -495,7 +515,7 @@ input {
 /* footer */
 
 #copyright {
-    background-color: #d80c18;
+    background-color: #0c81ad;
     background-repeat: no-repeat;
     background-position: center 0px;
     position: absolute;
@@ -545,7 +565,7 @@ input {
 }
 
 .table-02 thead>tr>th {
-    border-bottom: 2px solid #d80c18;
+    border-bottom: 2px solid #0c81ad;
 }
 
 .table-02>tbody>tr:first-child>td>.b-up {
@@ -568,6 +588,13 @@ input {
     display: inline-block;
     vertical-align: middle;
     width: 300px;
+    margin: 5px 10px 5px 0;
+}
+
+.fileStyle {
+    display: flex;
+    vertical-align: middle;
+    width: 100%;
     margin: 5px 10px 5px 0;
 }
 
@@ -654,9 +681,14 @@ button.btn.btn-success.btn-green:hover {
     padding-left: 8px;
 }
 
+.modal.in.valid{
+    top: 0px;
+}
+
 .modal.in {
     top: 100px;
 }
+
 
 
 /*
@@ -669,7 +701,7 @@ button.btn.btn-success.btn-green:hover {
 }
 
 .searchShape {
-    border: 1.4px solid #d80c18;
+    border: 1.4px solid #0c81ad;
     border-radius: 6px;
     min-height: 72px;
     margin-bottom: 20px;
@@ -682,14 +714,14 @@ button.btn.btn-success.btn-green:hover {
 }
 
 .searchBasicField {
-    color: #d80c18;
+    color: #0c81ad;
     min-width: 68px;
     text-align: center;
 }
 
 .searchQueryField {
-    border-right: 1.4px solid #d80c18;
-    border-left: 1.4px solid #d80c18;
+    border-right: 1.4px solid #0c81ad;
+    border-left: 1.4px solid #0c81ad;
     line-height: 70px;
     width: 100%;
     padding: 0 10px;
