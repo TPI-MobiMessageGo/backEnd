@@ -31,7 +31,8 @@
       //畫面切換
       $('.searchBasicField').on('click', function() {
           $(".listSwitch").show();
-        })
+      })
+
        //icon 點擊後顯示 datepicker
       $('.starticon').on('click', function () {
         $('#start').datetimepicker('toggle')
@@ -40,13 +41,21 @@
         $('#end').datetimepicker('toggle')
       })
     });
+
     $(document).ready(function () {
+      var NowDate = new Date();
+      var y = NowDate.getFullYear();
+      var m = NowDate.getMonth() + 1;
+      var d = NowDate.getDate();
+      var showTime = y + '/' + m + '/' + d;
+
       $.datetimepicker.setLocale('zh-TW')
       $('#start').datetimepicker({
         format: "Y/m/d",
         timepicker: false,
         dayOfWeekStart: 1,
         todayButton: false,
+        value: showTime,
         minDate: 0
       });
       $('#end').datetimepicker({
@@ -54,6 +63,7 @@
         timepicker: false,
         dayOfWeekStart: 1,
         todayButton: false,
+        value: showTime,
         minDate: 0
       });
     });
@@ -109,7 +119,7 @@
       </div>
       <div class="container">
           <div class="text-right btn-ft">
-            <a href="PromotionAdd.html" class="btn btn-danger btn-sm" type="button">新增</a>
+            <a href="PromotionAdd.html" class="btn btn-danger" type="button">新增</a>
           </div>
       </div>
       <div class="row listSwitch" style="display: none;">
@@ -117,18 +127,28 @@
           <thead>
             <tr>
               <th>ID</th>
+              <th>BU Department</th>
+              <th>Ads Name</th>
               <th>廣告說明</th>
               <th>Start Time</th>
               <th>End Time</th>
+              <th>Priority</th>
+              <th>Banner position</th>
+              <th>Display Platform</th>
               <th>Status</th>
               <th>功能</th>
             </tr>
           </thead>
           <tr>
             <td>1</td>
+            <td>群組一</td>
+            <td>繳款</td>
             <td>其他銀行帳戶繳款完成頁</td>
             <td>2020-04-06</td>
             <td>2020-04-20</td>
+            <td>Yes</td>
+            <td></td>
+            <td>Android</td>
             <td>已生效</td>
             <td>
                 <a class="btn btn-danger" type="button" href="PromotionEdit.html">修改</a>
@@ -137,9 +157,14 @@
           </tr>
           <tr>
             <td>2</td>
+            <td>群組一</td>
+            <td>抽獎活動</td>
             <td>於期限內完成任務即可得到抽獎機會</td>
             <td>2020-01-01</td>
             <td>2020-01-31</td>
+            <td>Yes</td>
+            <td></td>
+            <td>IOS</td>
             <td>新增待放行</td>
             <td>
                 <a class="btn btn-danger" type="button" href="PromotionApprove.html">審核</a>
@@ -147,9 +172,14 @@
           </tr>
           <tr>
             <td>3</td>
+            <td>群組一</td>
+            <td>信用卡優惠一覽表</td>
             <td>信用卡優惠一覽表</td>
             <td>2020-01-01</td>
             <td>2020-12-31</td>
+            <td>No</td>
+            <td></td>
+            <td>Both</td>
             <td>修改待放行</td>
             <td>
                 <a class="btn btn-danger" type="button" href="PromotionApprove.html">審核</a>
@@ -157,9 +187,14 @@
           </tr>
           <tr>
             <td>4</td>
+            <td>群組一</td>
+            <td>外匯匯率一覽表</td>
             <td>外匯匯率一覽表</td>
             <td>2020-01-01</td>
             <td>2020-12-31</td>
+            <td>No</td>
+            <td></td>
+            <td>Both</td>
             <td>刪除待放行</td>
             <td>
                 <a class="btn btn-danger" type="button" href="PromotionApprove.html">審核</a>
@@ -167,9 +202,14 @@
           </tr>
           <tr>
             <td>5</td>
+            <td>群組一</td>
+            <td>信用卡集點送</td>
             <td>信用卡集點送</td>
             <td>2020-01-01</td>
             <td>2020-12-31</td>
+            <td>Yes</td>
+            <td></td>
+            <td>Both</td>
             <td>已退件</td>
             <td>
               <button class="btn btn-danger" data-toggle="modal" data-target="#confirmModal">刪除</button>
@@ -215,6 +255,26 @@
         </div>
         <div class="modal-footer">
           <a href="PromotionQuery.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認登出</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否登出
+        </div>
+        <div class="modal-footer">
+          <a href="index.html" class="btn btn-danger" type="button">確認</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
         </div>
       </div>

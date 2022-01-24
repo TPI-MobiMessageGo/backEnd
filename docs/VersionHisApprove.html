@@ -28,11 +28,7 @@
       $('.head').load('Header.html');
       $('.footer').load('footer.html');
 
-      //畫面切換
-      $('.searchBasicField').on('click', function() {
-          $(".listSwitch").show();
-        })
-        //icon 點擊後顯示 datepicker
+      //icon 點擊後顯示 datepicker
       $('.addicon').on('click', function() {
         $('#add').datetimepicker('toggle')
       })
@@ -71,6 +67,8 @@
       });
     });
   </script>
+  <style>
+  </style>
 </head>
 
 <body>
@@ -79,105 +77,114 @@
     </header>
     <ol class="breadcrumb">
       <li>
-        <a href="#">內容管理</a>
+        <a href="#">APP管理</a>
       </li>
-      <li class="active">提示訊息(含錯誤碼說明)</li>
+      <li class="active">版本資訊管理</li>
     </ol>
     <div class="content">
-      <div class="searchPosition">
-        <div class="searchShape">
-          <div class="searchFieldPosition">
-            <div class="searchBasicField">
-              查詢
-            </div>
-            <div class="searchQueryField">
-              <div>
-                <span class="s">*</span> 訊息來源：
-                <div class="formStyle" style="width:200px;">
-                  <select class="form-control">
-                    <option>請選擇</option>
-                    <option selected>V+</option>
-                  </select>
-                </div>
-                訊息代碼：
-                <div class="formStyle" style="width:220px;">
-                    <input id="idNumber" type="text" class="form-control" aria-label="id">
-                </div>
-                
-              </div>
-            </div>
-            <div class="searchBasicField">
-              <button class="btn btn-danger" type="button">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="row listSwitch" style="display: none;">
-        <table class="table table-striped table-02 tableTitle">
-          <thead>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="text-right btn-ft">
+            <button class="btn btn-danger" data-toggle="modal" data-target="#confirmModal">Approve</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#rejectModal">Reject</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#backModal">Back</button>
+          </div>
+          <table class="table table-striped table-01 tableEdit">
             <tr>
-              <th style="width:10%">ID</th>
-              <th style="width:10%">Function Name</th>
-              <th style="width:10%">訊息來源</th>
-              <th style="width:20%">柬文回覆訊息</th>
-              <th style="width:20%">英文回覆訊息</th>
-              <th style="width:20%;">訊息說明</th>
-              <th style="width:5%;">Status</th>
-              <th style="width:5%;">功能</th>
+              <th>phone type</th>
+              <td>Android</td>
             </tr>
-          </thead>
-          <tr>
-            <td>M00014</td>
-            <td>login</td>
-            <td>V+</td>
-            <td>您的信用卡尚未開卡，為確保用卡安全，請儘速開啟您的信用卡，謝謝！</td>
-            <td>Not Activate the Card- Re-New Card</td>
-            <td>您的信用卡尚未開卡，為確保用卡安全，請儘速開啟您的信用卡，謝謝！</td>
-            <td>已生效</td>
-            <td>
-                <a class="btn btn-danger" type="button" href="DLQMessageEdit.html">修改</a>
-            </td>
-          </tr>
-          <tr>
-            <td>M00021</td>
-            <td>線上開卡</td>
-            <td>V+</td>
-            <td>卡片之前已開卡成功</td>
-            <td>Card Activated</td>
-            <td>卡片之前已開卡成功</td>
-            <td>已生效</td>
-            <td>
-                <a class="btn btn-danger" type="button" href="DLQMessageEdit.html">修改</a>
-            </td>
-          </tr>
-         
-        </table>
-        <nav aria-label="Page navigation">
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+            <tr>
+              <th>version</th>
+              <td>1.3</td>
+            </tr>
+            <tr>
+              <th>version status</th>
+              <td>forcibly</td>
+            </tr>
+            <tr>
+              <th>update msg</th>
+              <td>FORCIBLY UPDATE VERSION 1.3</td>
+            </tr>
+            <tr>
+              <th>active date</th>
+              <td>2021/08/15</td>
+            </tr>
+            <tr>
+              <th>update user</th>
+              <td>Jason</td>
+            </tr>
+            <tr>
+              <th>Status</th>
+              <td>update to approve</td>
+            </tr>
+          </table>
+        </div>
     </div>
+    
     <footer id="copyright" class="footer">
     </footer>
+  </div>
+
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認放行</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否放行
+        </div>
+        <div class="modal-footer">
+          <a href="VersionHis.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="rejectModal" tabindex="-1" role="dialog" aria-labelledby="rejectModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認退件</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否退件
+        </div>
+        <div class="modal-footer">
+          <a href="VersionHis.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="backModal" tabindex="-1" role="dialog" aria-labelledby="backModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認回上一頁</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否回上一頁
+        </div>
+        <div class="modal-footer">
+          <a href="VersionHis.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">

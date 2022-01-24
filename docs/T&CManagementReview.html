@@ -99,7 +99,7 @@
           <div class="text-right btn-ft">
             <button class="btn btn-danger" data-toggle="modal" data-target="#confirmModal">Approve</button>
             <button class="btn btn-danger" data-toggle="modal" data-target="#rejectModal">Reject</button>
-            <button class="btn btn-danger" data-toggle="modal" data-target="#backModal">back</button>
+            <button class="btn btn-danger" data-toggle="modal" data-target="#backModal">Back</button>
           </div>
           <table class="table table-striped table-01 tableEdit">
             <tr>
@@ -145,10 +145,10 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="myModalLabel">確認送審</h4>
+          <h4 class="modal-title" id="myModalLabel">確認放行</h4>
         </div>
         <div class="modal-body" style="text-align: center">
-          請確認是否送審
+          請確認是否放行
         </div>
         <div class="modal-footer">
           <a href="T&CManagementQuery.html" class="btn btn-danger" type="button">確認</a>
@@ -192,6 +192,26 @@
         </div>
         <div class="modal-footer">
           <a href="T&CManagementQuery.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認登出</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否登出
+        </div>
+        <div class="modal-footer">
+          <a href="index.html" class="btn btn-danger" type="button">確認</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
         </div>
       </div>

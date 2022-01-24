@@ -68,7 +68,7 @@
     });
   </script>
   <style>
-    th {
+    /* th {
       text-align: center;
     }
     
@@ -78,7 +78,7 @@
     
     td:nth-child(3) {
       text-align: right;
-    }
+    } */
   </style>
 </head>
 
@@ -97,60 +97,22 @@
         <table class="table table-striped table-02 tableTitle">
           <thead>
             <tr>
-              <th style="width:5%">群組</th>
-              <th style="width:5%">功能權限</th>
-              <th style="width:5%">筆數</th>
-              <th style="width:10%">境外機構商店編號</th>
-              <th style="width:10%">境外機構商店名稱</th>
-              <th style="width:10%;">上傳日期</th>
-              <th style="width:10%;">新增日期</th>
-              <th style="width:10%;">修改日期</th>
-              <th style="width:5%;">狀態</th>
-              <th style="width:5%;">功能</th>
+              <th style="width:10%">群組代碼</th>
+              <th style="width:10%">群組</th>
+              <th style="width:45%">功能權限</th>
+              <th style="width:15%;">修改日期</th>
+              <th style="width:10%;">狀態</th>
+              <th style="width:10%;">功能</th>
             </tr>
           </thead>
           <tr>
+            <td>ONE</td>
             <td>群組一</td>
-            <td>韓國</td>
-            <td>1</td>
-            <td>GLN0234567890123</td>
-            <td>日本橋三越 本館</td>
-            <td></td>
-            <td>2020/02/20</td>
-            <td></td>
-            <td>啟用</td>
+            <td>分行據點設定、ATM據點設定、後台系統登入記錄查詢、角色權限維護設定查詢</td>
+            <td>2022-02-31 09:00</td>
+            <td>修改待放行</td>
             <td>
-              <a class="btn btn-danger" type="button" href="StoreReview1.html">通過</a>
-            </td>
-          </tr>
-          <tr>
-            <td>GLN</td>
-            <td>日本</td>
-            <td>2000</td>
-            <td></td>
-            <td></td>
-            <td>2020/02/20</td>
-            <td></td>
-            <td></td>
-            <td>啟用</td>
-            <td>
-              <a class="btn btn-danger" type="button" href="StoreReview1.html">批次通過</a>
-              <a class="btn btn-danger" type="button" href="StoreReview1.html">逐項審核</a>
-            </td>
-          </tr>
-          <tr>
-            <td>GLN</td>
-            <td>日本</td>
-            <td>200</td>
-            <td></td>
-            <td></td>
-            <td>2020/02/18</td>
-            <td></td>
-            <td>2020/02/20</td>
-            <td>停用</td>
-            <td>
-              <a class="btn btn-danger" type="button" href="StoreReview1.html">批次通過</a>
-              <a class="btn btn-danger" type="button" href="StoreReview1.html">逐項審核</a>
+              <a class="btn btn-danger" type="button" href="GroupManagementReview.html">審核</a>
             </td>
           </tr>
         </table>
@@ -158,6 +120,26 @@
     </div>
     <footer id="copyright" class="footer">
     </footer>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認登出</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否登出
+        </div>
+        <div class="modal-footer">
+          <a href="index.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="modal" id="reportModel" tabindex="-1" role="dialog">

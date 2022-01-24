@@ -392,8 +392,8 @@ input {
 .ts-pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #d80c18;
-    border-color: #d80c18;
+    background-color: #337ab7;
+    border-color: #337ab7;
     color: #fff;
 }
 

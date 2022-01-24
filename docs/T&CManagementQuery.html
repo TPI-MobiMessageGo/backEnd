@@ -85,7 +85,7 @@
                     <div class="formStyle" style="width:200px;">
                         <select class="form-control">
                           <option>請選擇</option>
-                          <option>A01</option>
+                          <option selected>A01</option>
                           <option>A02</option>
                           <option>A03</option>
                           <option>A04</option>
@@ -108,19 +108,21 @@
             <tr>
               <th>同意條款代碼</th>
               <th>功能名稱</th>
-              <th>狀態</th>
+              <th>生效時間</th>
               <th>預覽</th>
+              <th>狀態</th>
               <th>功能</th>
             </tr>
           </thead>
           <tr>
             <td>A01</td>
             <td>線上註冊</td>
-            <td>已生效</td>
+            <td>2017-06-26 13:04:05</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
                 <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
             </td>
+            <td>已生效</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementEdit.html">修改</a>
             </td>
@@ -128,11 +130,12 @@
           <tr>
             <td>A02</td>
             <td>查詢使用者帳號</td>
-            <td>已生效</td>
+            <td>2017-06-26 13:04:05</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
                 <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
             </td>
+            <td>已生效</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementEdit.html">修改</a>
             </td>
@@ -140,11 +143,12 @@
           <tr>
             <td>A03</td>
             <td>重設使用者密碼</td>
-            <td>已生效</td>
+            <td>2017-06-26 13:04:05</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
                 <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
             </td>
+            <td>已生效</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementEdit.html">修改</a>
             </td>
@@ -152,11 +156,12 @@
           <tr>
             <td>A03</td>
             <td>重設使用者密碼</td>
+            <td>2017-06-26 13:04:05</td>
+            <td>
+                <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
+                <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
+            </td>
             <td>修改待放行</td>
-            <td>
-                <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
-                <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
-            </td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementReview.html">審核</a>
             </td>
@@ -164,11 +169,12 @@
           <tr>
             <td>A04</td>
             <td>其他銀行帳戶繳款(已登入)</td>
-            <td>已生效</td>
+            <td>2017-06-26 13:04:05</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
                 <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
             </td>
+            <td>已生效</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementEdit.html">修改</a>
             </td>
@@ -176,11 +182,12 @@
           <tr>
             <td>A05</td>
             <td>其他銀行帳戶繳款(未登入)</td>
-            <td>已生效</td>
+            <td>2017-06-26 13:04:05</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
                 <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
             </td>
+            <td>已生效</td>
             <td>
                 <a class="btn btn-danger" type="button" href="T&CManagementEdit.html">修改</a>
             </td>
@@ -188,11 +195,12 @@
           <tr>
             <td>A05</td>
             <td>其他銀行帳戶繳款(未登入)</td>
+            <td>2017-06-26 13:04:05</td>
+            <td>
+                <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
+                <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
+            </td>
             <td>已退件</td>
-            <td>
-                <a class="btn btn-danger" type="button" href="T&CManagementView.html">柬文</a>
-                <a class="btn btn-danger" type="button" href="T&CManagementViewEn.html">英文</a>
-            </td>
             <td>
               <button class="btn btn-danger" data-toggle="modal" data-target="#confirmModal">刪除</button>
             </td>
@@ -237,6 +245,26 @@
         </div>
         <div class="modal-footer">
           <a href="T&CManagementQuery.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認登出</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否登出
+        </div>
+        <div class="modal-footer">
+          <a href="index.html" class="btn btn-danger" type="button">確認</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
         </div>
       </div>

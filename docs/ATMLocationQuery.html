@@ -79,9 +79,9 @@
     </header>
     <ol class="breadcrumb">
       <li>
-        <a href="#">內容管理</a>
+        <a href="#">營運管理</a>
       </li>
-      <li class="active">提示訊息(含錯誤碼說明)</li>
+      <li class="active">ATM據點設定</li>
     </ol>
     <div class="content">
       <div class="searchPosition">
@@ -92,18 +92,43 @@
             </div>
             <div class="searchQueryField">
               <div>
-                <span class="s">*</span> 訊息來源：
+                <span class="s">*</span> City/Province：
+                <div class="formStyle" style="width:200px;">
+                  <select class="form-control">
+                    <option>Select City/Province</option>
+                    <option>Phnom Penh</option><option>Siem Reap</option><option>Sihanoukville</option><option>Battambang</option><option>Kampong Cham</option><option>Bavet</option>
+                  </select>
+                </div>
+                
+              </div>
+              <div>
+                
+                新增日期：
+                <div class="formStyle" style="width: 200px;">
+                  <div class="input-group date ">
+                    <input type="text" class="form-control" name="addTime" id="add" />
+                    <span class="input-group-addon addicon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+                修改日期：
+                <div class="formStyle" style="width: 200px;">
+                  <div class="input-group date">
+                    <input type="text" class="form-control" name="editTime" id="edit" />
+                    <span class="input-group-addon editicon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>
+                </div>
+                <span class="s">*</span> 狀態：
                 <div class="formStyle" style="width:200px;">
                   <select class="form-control">
                     <option>請選擇</option>
-                    <option selected>V+</option>
+                    <option>啟用</option>
+                    <option>停用</option>
                   </select>
                 </div>
-                訊息代碼：
-                <div class="formStyle" style="width:220px;">
-                    <input id="idNumber" type="text" class="form-control" aria-label="id">
-                </div>
-                
               </div>
             </div>
             <div class="searchBasicField">
@@ -115,43 +140,56 @@
         </div>
       </div>
 
+
+
       <div class="row listSwitch" style="display: none;">
         <table class="table table-striped table-02 tableTitle">
           <thead>
             <tr>
-              <th style="width:10%">ID</th>
-              <th style="width:10%">Function Name</th>
-              <th style="width:10%">訊息來源</th>
-              <th style="width:20%">柬文回覆訊息</th>
-              <th style="width:20%">英文回覆訊息</th>
-              <th style="width:20%;">訊息說明</th>
-              <th style="width:5%;">Status</th>
-              <th style="width:5%;">功能</th>
+              <th style="width:10%">Branch Name</th>
+              <th style="width:10%">City/Province</th>
+              <th style="width:30%">Address</th>
+              <th style="width:10%">Contact</th>
+              <th style="width:5%">is ATM</th>
+              <th style="width:10%;">ATM hours</th>
+              <th style="width:10%;">新增日期</th>
+              <th style="width:10%;">修改日期</th>
+              <th style="width:5%;">狀態</th>
             </tr>
           </thead>
           <tr>
-            <td>M00014</td>
-            <td>login</td>
-            <td>V+</td>
-            <td>您的信用卡尚未開卡，為確保用卡安全，請儘速開啟您的信用卡，謝謝！</td>
-            <td>Not Activate the Card- Re-New Card</td>
-            <td>您的信用卡尚未開卡，為確保用卡安全，請儘速開啟您的信用卡，謝謝！</td>
-            <td>已生效</td>
-            <td>
-                <a class="btn btn-danger" type="button" href="DLQMessageEdit.html">修改</a>
-            </td>
+            <td>Cathay United Bank (Cambodia)-Chaom Chau Branch</td>
+            <td>Phnom Penh</td>
+            <td>200m from Phnom Penh International Airport, No. 8C & 9C (Eo,E1), Confederation de la Russie Blvd, Sangkat Kakab, Khan Porsenchey, Phnom Penh Tek Thlar, Khan Sen Sok</td>
+            <td>Tel: (855) 23 - 89 03 99
+Fax: (855) 23 - 89 06 13</td>
+            <td>Yes</td>
+            <td>24/7</td>
+            <td></td>
+            <td></td>
+            <td>啟用</td>
           </tr>
           <tr>
-            <td>M00021</td>
-            <td>線上開卡</td>
-            <td>V+</td>
-            <td>卡片之前已開卡成功</td>
-            <td>Card Activated</td>
-            <td>卡片之前已開卡成功</td>
-            <td>已生效</td>
-            <td>
-                <a class="btn btn-danger" type="button" href="DLQMessageEdit.html">修改</a>
-            </td>
+            <td>Cathay United Bank (Cambodia)-Mao Tse Toung Branch, Phnom Penh</td>
+            <td>Phnom Penh</td>
+            <td> No. 183AB, 296 Mao Tse Toung Blvd, Sangkat Toul Svay Prey, Phnom Penh</td>
+            <td></td>
+            <td>Yes</td>
+            <td>24/7</td>
+            <td>2020/02/20</td>
+            <td></td>
+            <td>啟用</td>
+          </tr>
+          <tr>
+            <td>Cathay United Bank (Cambodia) Corporation Limited Saensokh Branch</td>
+            <td>Phnom Penh</td>
+            <td>Lot No. 1212 Phum Roung Chakr 1, Kouk Khleang Commune, Saensokh District, Phnom Penh.</td>
+            <td>(+855) 23 990 688</td>
+            <td>No</td>
+            <td></td>
+            <td>2020/02/19</td>
+            <td>2020/02/19</td>
+            <td>啟用</td>
           </tr>
          
         </table>

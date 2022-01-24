@@ -101,6 +101,31 @@
                 </td>
             </tr>
             <tr>
+              <th>
+                <span class="s">*</span>BU Department
+              </th>
+              <td>
+                <div class="formStyle">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option selected>群組一</option>
+                    <option>群組二</option>
+                    <option>群組三</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <span class="s">*</span>Ads Name
+              </th>
+              <td>
+                <div class="formStyle">
+                  <input type="text" class="form-control" value="繳款">
+                </div>
+              </td>
+            </tr>
+            <tr>
                 <th>
                   <span class="s">*</span>廣告說明
                 </th>
@@ -144,6 +169,49 @@
                 </td>
             </tr>
             <tr>
+              <th>
+                <span class="s">*</span>Priority
+              </th>
+              <td>
+                <div class="formStyle">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option selected>Yes</option>
+                    <option>No</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <span class="s">*</span>Banner position
+              </th>
+              <td>
+                <div class="formStyle">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <span class="s">*</span>Display Platform
+              </th>
+              <td>
+                <div class="formStyle">
+                  <select class="form-control">
+                    <option>請選擇</option>
+                    <option>Both</option>
+                    <option selected>Android</option>
+                    <option>IOS</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
                 <th>
                   <span class="s">*</span>圖片
                 </th>
@@ -152,7 +220,6 @@
                     <input type="file" id="file" style="display: none" onchange="fileGet(this)">
                     <button class="btn btn-danger showfile" type="button" onclick="file.click()">請選擇檔案</button>
                     <img id="output" height="250" width="200" src="images/logo_CUBC.png">
-                    <!-- <div id="fileName">d2-6.png</div> -->
                   </div>
                 </td>
             </tr>
@@ -161,7 +228,7 @@
                   <span class="s">*</span>連結
                 </th>
                 <td>
-                  <div class="formStyle">
+                  <div class="w-text">
                     <input type="text" class="form-control" value="https://www.google.com.tw/?hl=zh_TW">
                   </div>
                 </td>
@@ -209,6 +276,26 @@
         </div>
         <div class="modal-footer">
           <a href="PromotionQuery.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認登出</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否登出
+        </div>
+        <div class="modal-footer">
+          <a href="index.html" class="btn btn-danger" type="button">確認</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
         </div>
       </div>

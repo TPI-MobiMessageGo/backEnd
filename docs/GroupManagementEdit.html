@@ -73,7 +73,8 @@
           <div class="text-right btn-ft">
             <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal"
               data-target="#confirmModal">送審</button>
-            <a href="GroupManagementDetail.html" class="btn btn-danger btn-sm" type="button">取消</a>
+            <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal"
+              data-target="#backModal">取消</button>
           </div>
           <table class="table table-striped table-01 tableEdit">
             <tr>
@@ -133,6 +134,26 @@
     </div>
   </div>
 
+  <div class="modal fade" id="backModal" tabindex="-1" role="dialog" aria-labelledby="backModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認回上一頁</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否回上一頁
+        </div>
+        <div class="modal-footer">
+          <a href="GroupManagementDetail.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="myModa2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -152,56 +173,56 @@
               </tr>
             </thead>
             <tr>
-              <td>Card+系統設定</td>
-              <td>系統參數資料維護</td>
+              <td>營運管理</td>
+              <td>分行據點設定</td>
               <td>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="系統參數資料維護" name="apiCheckbox">
+                    <input type="checkbox" value="分行據點設定" name="apiCheckbox">
                   </label>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Card+系統設定</td>
-              <td>系統維護公告</td>
+              <td>營運管理</td>
+              <td>ATM據點設定</td>
               <td>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="系統維護公告" name="apiCheckbox">
+                    <input type="checkbox" value="ATM據點設定" name="apiCheckbox">
                   </label>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Card+ APP 管理與公告</td>
-              <td>Card+ APP 查詢/註銷</td>
+              <td>安控資料查詢</td>
+              <td>後台系統登入記錄查詢</td>
               <td>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="Card+ APP  查詢/註銷" name="apiCheckbox">
+                    <input type="checkbox" value="後台系統登入記錄查詢" name="apiCheckbox">
                   </label>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>報表管理</td>
-              <td>客戶登入狀態查詢</td>
+              <td>安控資料查詢</td>
+              <td>角色權限維護設定查詢</td>
               <td>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="客戶登入狀態查詢" name="apiCheckbox">
+                    <input type="checkbox" value="角色權限維護設定查詢" name="apiCheckbox">
                   </label>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>報表管理</td>
-              <td>客戶序時資料查詢</td>
+              <td>安控資料查詢</td>
+              <td>系統維護紀錄查詢</td>
               <td>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="客戶序時資料查詢" name="apiCheckbox">
+                    <input type="checkbox" value="系統維護紀錄查詢" name="apiCheckbox">
                   </label>
                 </div>
               </td>
@@ -212,6 +233,26 @@
           <button type="button" class="btn btn-danger" onclick="allCheck()">全部選取</button>
           <button type="button" class="btn btn-danger" onclick="falseCheck()">全部取消</button>
           <button type="button" class="btn btn-danger" id="ms-1" data-dismiss="modal" onclick="showCheck()">確認</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header modal-bg-blue">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">確認登出</h4>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          請確認是否登出
+        </div>
+        <div class="modal-footer">
+          <a href="index.html" class="btn btn-danger" type="button">確認</a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
         </div>
       </div>
     </div>
