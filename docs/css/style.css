@@ -227,7 +227,7 @@ nav.menu ul ul ul {
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #d80c18;
+    border-bottom: 1px solid #0c81ad;
 }
 
 .nav-tabs>li>a {
@@ -235,16 +235,16 @@ nav.menu ul ul ul {
 }
 
 .nav-tabs>li>a:hover {
-    border-color: #eee #eee #d80c18;
+    border-color: #eee #eee #0c81ad;
     background-color: #eae8dc;
-    color: #d80c18;
+    color: #0c81ad;
 }
 
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:hover,
 .nav-tabs>li.active>a:focus {
-    color: #d80c18;
-    border: 1px solid #d80c18;
+    color: #0c81ad;
+    border: 1px solid #0c81ad;
     border-bottom-color: transparent;
 }
 

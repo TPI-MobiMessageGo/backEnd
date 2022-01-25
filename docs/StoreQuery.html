@@ -24,26 +24,26 @@
   <script src="js/jquery.datetimepicker.full.js" type="text/javascript"></script>
 
   <script type="text/javascript">
-    $(function() {
+    $(function () {
       $('.head').load('Header.html');
       $('.footer').load('footer.html');
 
       //畫面切換
-      $('.searchBasicField').on('click', function() {
-          $(".listSwitch").show();
-        })
-        //icon 點擊後顯示 datepicker
-      $('.addicon').on('click', function() {
+      $('.searchBasicField').on('click', function () {
+        $(".listSwitch").show();
+      })
+      //icon 點擊後顯示 datepicker
+      $('.addicon').on('click', function () {
         $('#add').datetimepicker('toggle')
       })
-      $('.editicon').on('click', function() {
+      $('.editicon').on('click', function () {
         $('#edit').datetimepicker('toggle')
       })
-      $('.updateicon').on('click', function() {
+      $('.updateicon').on('click', function () {
         $('#update').datetimepicker('toggle')
       })
     });
-    $(document).ready(function() {
+    $(document).ready(function () {
       $.datetimepicker.setLocale('zh-TW')
       $('#update').datetimepicker({
         format: "Y/m/d",
@@ -96,13 +96,18 @@
                 <div class="formStyle" style="width:200px;">
                   <select class="form-control">
                     <option>Select City/Province</option>
-                    <option>Phnom Penh</option><option>Siem Reap</option><option>Sihanoukville</option><option>Battambang</option><option>Kampong Cham</option><option>Bavet</option>
+                    <option>Phnom Penh</option>
+                    <option>Siem Reap</option>
+                    <option>Sihanoukville</option>
+                    <option>Battambang</option>
+                    <option>Kampong Cham</option>
+                    <option>Bavet</option>
                   </select>
                 </div>
-                
+
               </div>
               <div>
-                
+
                 新增日期：
                 <div class="formStyle" style="width: 200px;">
                   <div class="input-group date ">
@@ -150,48 +155,67 @@
               <th style="width:10%">City/Province</th>
               <th style="width:30%">Address</th>
               <th style="width:10%">Contact</th>
+              <th style="width:10%;">經度</th>
+              <th style="width:10%;">緯度</th>
               <th style="width:5%">is ATM</th>
               <th style="width:10%;">ATM hours</th>
               <th style="width:10%;">新增日期</th>
               <th style="width:10%;">修改日期</th>
               <th style="width:5%;">狀態</th>
+              <th style="width:5%;">功能</th>
             </tr>
           </thead>
           <tr>
             <td>Cathay United Bank (Cambodia)-Chaom Chau Branch</td>
             <td>Phnom Penh</td>
-            <td>200m from Phnom Penh International Airport, No. 8C & 9C (Eo,E1), Confederation de la Russie Blvd, Sangkat Kakab, Khan Porsenchey, Phnom Penh Tek Thlar, Khan Sen Sok</td>
+            <td>200m from Phnom Penh International Airport, No. 8C & 9C (Eo,E1), Confederation de la Russie Blvd,
+              Sangkat Kakab, Khan Porsenchey, Phnom Penh Tek Thlar, Khan Sen Sok</td>
             <td>Tel: (855) 23 - 89 03 99
-Fax: (855) 23 - 89 06 13</td>
+              Fax: (855) 23 - 89 06 13</td>
+            <td>11.546373496575349</td>
+            <td>104.83733321036382</td>
             <td>Yes</td>
             <td>24/7</td>
             <td></td>
             <td></td>
             <td>啟用</td>
+            <td>
+              <a class="btn btn-danger" type="button" href="StoreEdit.html">修改</a>
+            </td>
           </tr>
           <tr>
             <td>Cathay United Bank (Cambodia)-Mao Tse Toung Branch, Phnom Penh</td>
             <td>Phnom Penh</td>
             <td> No. 183AB, 296 Mao Tse Toung Blvd, Sangkat Toul Svay Prey, Phnom Penh</td>
             <td></td>
+            <td>11.546373496575349</td>
+            <td>104.83733321036382</td>
             <td>Yes</td>
             <td>24/7</td>
             <td>2020/02/20</td>
             <td></td>
             <td>啟用</td>
+            <td>
+              <a class="btn btn-danger" type="button" href="StoreEdit.html">修改</a>
+            </td>
           </tr>
           <tr>
             <td>Cathay United Bank (Cambodia) Corporation Limited Saensokh Branch</td>
             <td>Phnom Penh</td>
             <td>Lot No. 1212 Phum Roung Chakr 1, Kouk Khleang Commune, Saensokh District, Phnom Penh.</td>
             <td>(+855) 23 990 688</td>
+            <td>11.546373496575349</td>
+            <td>104.83733321036382</td>
             <td>No</td>
             <td></td>
             <td>2020/02/19</td>
             <td>2020/02/19</td>
             <td>啟用</td>
+            <td>
+              <a class="btn btn-danger" type="button" href="StoreEdit.html">修改</a>
+            </td>
           </tr>
-         
+
         </table>
         <nav aria-label="Page navigation">
           <ul class="pagination">
