@@ -126,8 +126,8 @@ nav.menu ul {
 }
 
 nav.menu ul li a:hover {
-    color: #ffffff;
-    background-color: #d80c18;
+    color: #fff;
+    background-color: #3c3c3c;
     text-decoration: none;
 }
 
@@ -166,9 +166,9 @@ nav.menu ul li ul li a {
     background: #f8f8f8;
 } */
 
-nav.menu ul li ul li a:only-child {
+/* nav.menu ul li ul li a:only-child {
     background-color: #f3f3f3;
-}
+} */
 
 nav.menu ul li:hover>a {
     color: #fff;
