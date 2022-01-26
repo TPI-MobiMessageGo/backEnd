@@ -35,7 +35,10 @@
       <li>
         <a href="#">APP管理</a>
       </li>
-      <li class="active">版本資訊維護</li>
+      <li class="active">
+        <a href="#">版本資訊維護</a>
+      </li>
+      <li class="active">版本資訊修改</li>
     </ol>
     <div class="content">
 
@@ -59,8 +62,9 @@
             <span class="s">*</span>版本號碼
           </th>
           <td>
-            <input type="text" class="s-text" value="1.2">
-
+            <div class="formStyle">
+              <input type="text" class="form-control" value="1.2">
+            </div>
           </td>
         </tr>
 
@@ -82,8 +86,28 @@
             <span class="s">*</span>版本提示訊息
           </th>
           <td>
-            <input type="text" size="60" class="s-text" value="UPDATE VERSION 1.2">
+            <div class="w-text">
+              <input type="text" size="60" class="form-control" value="UPDATE VERSION 1.2">
+            </div>
 
+          </td>
+        </tr>
+        <tr>
+          <th>
+            強制版本
+          </th>
+          <td>
+            若選擇為強制更新，則此欄與新版號相同，若選擇提醒更新，送出後系統自動抓取最近一次強制版本
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <span class="s">*</span>APP檔案下載網址
+          </th>
+          <td>
+            <div class="w-text">
+              <input type="text" class="form-control" value="http://www.mobile01.com/">
+            </div>
           </td>
         </tr>
 
