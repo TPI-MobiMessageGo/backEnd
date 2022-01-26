@@ -49,24 +49,6 @@
         minDate: 1,
       });
     });
-
-    function fileGet(e) {
-      var file = e.files[0];
-
-      var reader = new FileReader(); //建立FileReader物件
-
-      reader.readAsDataURL(file); //以.readAsDataURL將上傳檔案轉換為base64字串
-
-      reader.onload = function () { //FileReader取得上傳檔案後執行以下內容
-        var dataURL = reader.result; //設定變數dataURL為上傳圖檔的base64字串
-        $('#output').attr('src', dataURL).show(); //將img的src設定為dataURL並顯示
-      };
-      // if (!file) {
-      //   return;
-      // } else {
-      //   $("#fileName")[0].innerText = file.name;
-      // }
-    }
   </script>
 
 </head>
@@ -79,7 +61,10 @@
       <li>
         <a href="#">營運管理</a>
       </li>
-      <li class="active">分行據點設定</li>
+      <li class="active">
+        <a href="#">分行據點設定</a>
+      </li>
+      <li class="active">分行據點修改</li>
     </ol>
     <div class="content">
 
