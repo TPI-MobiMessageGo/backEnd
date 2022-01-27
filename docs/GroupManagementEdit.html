@@ -65,14 +65,17 @@
       <li>
         <a href="#">權限管理</a>
       </li>
-      <li class="active">Function Group Management</li>
+      <li class="active">
+        <a href="#">群組功能管理</a>
+      </li>
+      <li class="active">群組功能修改</li>
     </ol>
     <div class="content">
       <!-- <form role="form" data-toggle="validator"> -->
         <div role="tabpanel" class="tab-pane active" id="coupon02">
           <div class="text-right btn-ft">
             <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal"
-              data-target="#confirmModal">送審</button>
+              data-target="#confirmModal">送出</button>
             <button type="submit" class="btn btn-danger btn-sm" data-toggle="modal"
               data-target="#backModal">取消</button>
           </div>
@@ -85,12 +88,9 @@
                 <div class="form-group w-text">
                   <select class="form-control" required>
                     <option>請選擇</option>
-                    <option value="100">群組一</option>
-                    <option value="200">群組二</option>
-                    <option value="300">群組三</option>
-                    <option value="400">群組四</option>
-                    <option value="500">群組五</option>
-                    <option value="600">群組六</option>
+                    <option value="100">金融行銷處</option>
+                    <option value="200">消費金融處</option>
+                    <option value="300">系統管理員</option>
                   </select>
                   <div class="help-block with-errors"></div>
                 </div>
@@ -121,10 +121,10 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <h4 class="modal-title" id="myModalLabel">確認送審</h4>
+          <h4 class="modal-title" id="myModalLabel">確認送出</h4>
         </div>
         <div class="modal-body" style="text-align: center">
-          請確認是否送審
+          請確認是否送出
         </div>
         <div class="modal-footer">
           <a href="GroupManagementDetail.html" class="btn btn-danger" type="button">確認</a>
